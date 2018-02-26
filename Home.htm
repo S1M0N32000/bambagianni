@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script>
+            function calcolaAnni()
+            {
+                data = new Date()  //variabile sulla data
+                
+                year = prompt("Inserisci il tuo anno di nascita", 0)
+                while (year > data.getFullYear() || year == 0) //controlli sull'anno di nascita
+                {
+                  year = ""
+                  year = prompt("Inserisci un anno reale", 0)  
+                }
+    
+                month = prompt("Inserisci il tuo mese di nascita", 0)
+                while(month < 1 || month > 12) //controlli sul mese di nascita (da fixare)
+                {
+                    month = ""
+                    month = prompt("Inserisci un mese reale compreso fra 1 e 12", 0)
+                }
+                
+                ax = data.getFullYear()
+                anni= ax - year
+                
+               
+                
+                if (month > (data.getMonth()+1)) //controllo mese 
+                {
+                    anni = anni -1;
+                }
+                
+                alert("tu hai " + anni + " anni") //out
+            }
+        </script>
+    </head>
+    <body>
+        <input type= "button" value= "inizia" onclick= "calcolaAnni()"/>
+    </body>
+</html>
